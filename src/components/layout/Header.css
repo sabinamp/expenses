@@ -1,15 +1,15 @@
 .Header {
-    min-height: 15vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: white;
     background: #282c34;
+    min-height: 15vh;
   
   }
   .Header h1{
    font-size:1.2rem;
- 
+
   }

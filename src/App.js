@@ -1,8 +1,8 @@
 import './App.css';
-import ExpenseItem from './components/ExpenseItem';
 import Expenses  from './components/Expenses/Expenses';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import Content from './components/layout/Content';
 function App() {
 
   const expenses=[
@@ -13,7 +13,11 @@ function App() {
   return (
     <div className="App">
       <Header title="Expenses"/>
-      <Expenses expenses={expenses}/>
+      <Content>
+        <>
+        <Expenses expenses={expenses}/>
+        </>
+      </Content>
       <Footer />
     </div>
   );
