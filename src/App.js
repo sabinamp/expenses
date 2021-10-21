@@ -3,6 +3,8 @@ import Expenses  from './components/Expenses/Expenses';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Content from './components/layout/Content';
+import NewExpense from './components/ExpenseItem/NewExpense';
+
 function App() {
 
   const expenses=[
@@ -15,6 +17,7 @@ function App() {
       <Header title="Expenses"/>
       <Content>
         <>
+        <NewExpense/>
         <Expenses expenses={expenses}/>
         </>
       </Content>

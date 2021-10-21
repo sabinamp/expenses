@@ -1,4 +1,11 @@
-.content{
-    background-color: #333;
-    padding: 0.2rem;
+.content {
+	background-color: #333;
+	padding: 1rem;
+	width: 60rem;
+	max-width: 95%;
+    margin: 2rem auto;
+    display: flexbox;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
