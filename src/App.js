@@ -28,7 +28,7 @@ function App() {
     console.log(newExpense);
 		//expenses.push({ ...newExpense, id: Math.random().toString() });
      //setExpenses(expenses);
-    setExpenses([...expenses, { ...newExpense, id: Math.random().toString() } ]);
+    setExpenses(prevExpenses=>[...prevExpenses, { ...newExpense, id: Math.random().toString() } ]);
    
 	};
 
