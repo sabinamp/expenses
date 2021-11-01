@@ -25,11 +25,8 @@ function App() {
 	const [expenses, setExpenses] = useState(initialExpenses);
 
 	const onNewExpenseSubmitHandler = (newExpense) => {
-    console.log(newExpense);
-		//expenses.push({ ...newExpense, id: Math.random().toString() });
-     //setExpenses(expenses);
-    setExpenses(prevExpenses=>[...prevExpenses, { ...newExpense, id: Math.random().toString() } ]);
-   
+    console.log(newExpense);		
+    setExpenses(prevExpenses=>[...prevExpenses, { ...newExpense, id: Math.random().toString() } ]);   
 	};
 
 	return (
