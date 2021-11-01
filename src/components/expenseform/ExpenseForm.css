@@ -21,8 +21,13 @@
     max-width: 100%;
   }
   
-  .new-expense_btn {
+  .new-expense-btn {
     text-align: right;
+    display: flexbox;
+    flex-direction: row;
+    align-items: center;
+    justify-items: space-between;
+
   }
 
   

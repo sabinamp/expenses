@@ -22,11 +22,11 @@ const initialExpenses = [
 ];
 function App() {
 	
-	const [expenses, setExpenses] = useState(initialExpenses);
+	const [expenses, setExpenses] = useState(initialExpenses); 
 
-	const onNewExpenseSubmitHandler = (newExpense) => {
+	const onAddExpenseHandler = (newExpense) => {
     console.log(newExpense);		
-    setExpenses(prevExpenses=>[...prevExpenses, { ...newExpense, id: Math.random().toString() } ]);   
+    setExpenses(prevExpenses=>[...prevExpenses, newExpense ]);   
 	};
 
 	return (
@@ -34,7 +34,7 @@ function App() {
 			<Header title="Expenses" />
 			<Content>
 				<>
-					<NewExpense onNewExpenseSubmitHandler={onNewExpenseSubmitHandler} />
+					<NewExpense onNewExpenseSubmitHandler={onAddExpenseHandler} />
 					<Expenses expenseItems={expenses} />
 				</>
 			</Content>
