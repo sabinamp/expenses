@@ -8,17 +8,56 @@ import { useState } from "react";
 const initialExpenses = [
   {
     id: "e1",
-    title: "Printer Ink",
+    title: "New Printer",
     amount: 293.0,
     date: new Date(2021, 2, 3),
   },
   {
-    id: "e2",
-    title: "Car Insurance",
+    id: "1119",
+    title: "Mobile Abo",
+    amount: 29.0,
+    date: new Date(2021, 9, 4),
+  },
+  {
+    id: "1121",
+    title: "New Photo Camera",
     amount: 223.0,
     date: new Date(2021, 1, 3),
   },
-  { id: "1123", title: "New TV", amount: 799.0, date: new Date(2021, 6, 7) },
+  {
+    id: "1122",
+    title: "Mobile Abo",
+    amount: 29.0,
+    date: new Date(2021, 5, 5),
+  },
+  { id: "1123",
+   title: "New Video Camera",
+   amount: 799.0, 
+   date: new Date(2021, 5, 6) },
+   {
+    id: "1124",
+    title: "Mobile Abo",
+    amount: 29.0,
+    date: new Date(2021, 10, 7),
+  },
+  {
+    id: "1125",
+    title: "Mobile Abo",
+    amount: 29.0,
+    date: new Date(2021, 30, 9),
+  },
+  {
+    id: "1126",
+    title: "Printer Ink",
+    amount: 79.0,
+    date: new Date(2021, 15, 7),
+  },
+  {
+    id: "1127",
+    title: "Mobile Abo",
+    amount: 29.0,
+    date: new Date(2021, 30, 8),
+  },
 ];
 function App() {
 	
