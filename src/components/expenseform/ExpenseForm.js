@@ -9,18 +9,17 @@ const ExpenseForm = (props) => {
 
   const [isValidAmount, setIsValidAmount] = useState(false);
   const [isEmptyTitle, setIsEmptyTitle] = useState(true);
+
   const titleChangeHandler=(e)=>{ 
     const titleVal = e.target.value;
-    if(titleVal.length > 0){
+    if(titleVal.trim().length > 0){
       setTitle(titleVal);
       setIsEmptyTitle(false);
     }else{
       setIsEmptyTitle(true);
     }
-   
-     /* console.log(`title: ${title}`) */
-
-    };
+    /* console.log(`title: ${title}`) */
+  };
 
   const amountChangeHandler = (e)=>{ 
     const amountVal = e.target.value;
@@ -29,7 +28,8 @@ const ExpenseForm = (props) => {
     }
     setAmount(amountVal);
      /* console.log(`amount: ${amount}`) */
-    };
+  };
+
   const dateChangeHandler = (e)=>{ 
     console.log(`expenseDate: ${expenseDate}`);
     setExpenseDate(e.target.value);
@@ -51,13 +51,13 @@ const ExpenseForm = (props) => {
     return (
       <form onSubmit={submitHandler}>
         <div className='new-expense_controls'>
-          <div className='new-expense_control'>
+          <div className={`new-expense_control ${isEmptyTitle? 'invalid': ''}`}>
             <label>Title</label>
-            <input style={{borderColor: isEmptyTitle? 'red': 'gray'}} type='text' onChange={titleChangeHandler} value={title} />
+            <input type='text' onChange={titleChangeHandler} value={title} />
           </div>
-          <div className='new-expense_control'>
+          <div className={`new-expense_control ${isValidAmount? '': 'invalid' }`}>
             <label>Amount</label>
-            <input style={{borderColor: isValidAmount? 'black': 'red'}}
+            <input
              type='number' min='0.01' step='0.01' onChange={amountChangeHandler} value={amount}/>
           </div>
           <div className='new-expense_control'>

@@ -20,7 +20,10 @@
     width: 20rem;
     max-width: 85%;
   }
-  
+  .new-expense_control.invalid input{
+    border-color: red;
+    background-color: blanchedalmond;
+  }
   .new-expense-btn {
     text-align: right;
     display: flexbox;
