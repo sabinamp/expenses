@@ -7,12 +7,34 @@ const ExpenseForm = (props) => {
   const [amount, setAmount]=useState(0.01);
   const [expenseDate, setExpenseDate] = useState('');
 
-  const titleChangeHandler=(e)=>{ setTitle(e.target.value); /* console.log(`title: ${title}`) */};
-  const amountChangeHandler = (e)=>{ setAmount(e.target.value); /* console.log(`amount: ${amount}`) */};
+  const [isValidAmount, setIsValidAmount] = useState(false);
+  const [isEmptyTitle, setIsEmptyTitle] = useState(true);
+  const titleChangeHandler=(e)=>{ 
+    const titleVal = e.target.value;
+    if(titleVal.length > 0){
+      setTitle(titleVal);
+      setIsEmptyTitle(false);
+    }else{
+      setIsEmptyTitle(true);
+    }
+   
+     /* console.log(`title: ${title}`) */
+
+    };
+
+  const amountChangeHandler = (e)=>{ 
+    const amountVal = e.target.value;
+    if( Number(amountVal) > 0.00){
+      setIsValidAmount(true);
+    }
+    setAmount(amountVal);
+     /* console.log(`amount: ${amount}`) */
+    };
   const dateChangeHandler = (e)=>{ 
     console.log(`expenseDate: ${expenseDate}`);
     setExpenseDate(e.target.value);
  };
+
  const submitHandler = (event)=>{
    event.preventDefault();
     const newExpense = {
@@ -31,11 +53,12 @@ const ExpenseForm = (props) => {
         <div className='new-expense_controls'>
           <div className='new-expense_control'>
             <label>Title</label>
-            <input type='text' onChange={titleChangeHandler} value={title} />
+            <input style={{borderColor: isEmptyTitle? 'red': 'gray'}} type='text' onChange={titleChangeHandler} value={title} />
           </div>
           <div className='new-expense_control'>
             <label>Amount</label>
-            <input type='number' min='0.01' step='0.01' onChange={amountChangeHandler} value={amount}/>
+            <input style={{borderColor: isValidAmount? 'black': 'red'}}
+             type='number' min='0.01' step='0.01' onChange={amountChangeHandler} value={amount}/>
           </div>
           <div className='new-expense_control'>
             <label>Date</label>
